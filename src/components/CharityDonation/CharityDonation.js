@@ -49,9 +49,9 @@ export default {
     }
   },
   methods: {
-    getData() {
+    async getData() {
       this.loading = true;
-      axios
+      await axios
         .get('https://coop-mock-test-api.herokuapp.com/')
         .then(({ data }) => {
           this.target = data.target;
