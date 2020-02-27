@@ -58,6 +58,10 @@
               name="donation"
               id="donation"
               pattern="[0-9]+"
+              @keydown="isNumber($event)"
+              autocomplete="off"
+              v-model="donation"
+              ref="donation"
             />
           </div>
           <button

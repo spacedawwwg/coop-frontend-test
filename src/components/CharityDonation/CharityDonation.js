@@ -21,6 +21,7 @@ export default {
       loading: true,
       target: 0,
       raised: 0,
+      donation: null,
       error: null,
       countUp: {
         options: {
@@ -61,6 +62,19 @@ export default {
           this.loading = false;
           this.error = error;
         });
+    },
+    isNumber: function(e) {
+      e = e ? e : window.event;
+      var charCode = e.which ? e.which : e.keyCode;
+      if (
+        charCode > 31 &&
+        (charCode < 48 || charCode > 57) &&
+        charCode !== 46
+      ) {
+        e.preventDefault();
+      } else {
+        return true;
+      }
     }
   },
   mounted() {
