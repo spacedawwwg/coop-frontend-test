@@ -25,7 +25,7 @@
         </h4>
         <p ref="raised">
           &pound;
-          {{ raised }}
+          <ICountUp :endVal="raised" v-bind="countUp" />
         </p>
       </div>
       <div class="coop-c-charity-donation__target">
@@ -34,7 +34,10 @@
         </h4>
         <p ref="target">
           &pound;
-          {{ target }}
+          <ICountUp
+            :endVal="target"
+            v-bind="countUp"
+          />
         </p>
       </div>
       <form class="coop-c-charity-donation__donate">

@@ -1,7 +1,11 @@
 import axios from 'axios';
+import ICountUp from 'vue-countup-v2';
 
 export default {
   name: 'CharityDonation',
+  components: {
+    ICountUp
+  },
   props: {
     title: {
       type: String,
@@ -17,7 +21,19 @@ export default {
       loading: true,
       target: 0,
       raised: 0,
-      error: null
+      error: null,
+      countUp: {
+        options: {
+          useEasing: true,
+          useGrouping: true,
+          separator: ',',
+          decimal: '.',
+          decimalPlaces: 2,
+          prefix: '',
+          suffix: '',
+          duration: 1
+        }
+      }
     };
   },
   computed: {
@@ -32,9 +48,9 @@ export default {
     }
   },
   methods: {
-    async getData() {
+    getData() {
       this.loading = true;
-      await axios
+      axios
         .get('https://coop-mock-test-api.herokuapp.com/')
         .then(({ data }) => {
           this.target = data.target;

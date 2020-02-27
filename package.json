@@ -12,7 +12,9 @@
     "@coopdigital/css-foundations": "^2.0.5",
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "countup.js": "^2.0.4",
+    "vue": "^2.6.11",
+    "vue-countup-v2": "^4.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.2.0",

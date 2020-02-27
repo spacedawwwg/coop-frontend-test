@@ -7,7 +7,13 @@ const MockAdapter = require('axios-mock-adapter');
 const mock = new MockAdapter(axios);
 const defaultProps = {
   title: 'test title',
-  charity: 'test charity'
+  charity: 'test charity',
+  countUp: {
+    delay: 0,
+    options: {
+      duration: 0.001
+    }
+  }
 };
 
 const shallowMountComponent = options =>
@@ -29,57 +35,41 @@ describe('CharityDonation', () => {
   });
 
   test('gets donation data', async () => {
-    const wrapper = shallowMountComponent();
-    expect(wrapper.vm.target).toEqual(0);
-    expect(wrapper.vm.raised).toEqual(0);
-    await wrapper.vm.getData();
-    expect(wrapper.vm.target).toEqual(donationDataFixture.target);
-    expect(wrapper.vm.raised).toEqual(donationDataFixture.raised);
+    const { vm } = shallowMountComponent();
+    expect(vm.target).toEqual(0);
+    expect(vm.raised).toEqual(0);
+    await vm.getData();
+    expect(vm.target).toEqual(donationDataFixture.target);
+    expect(vm.raised).toEqual(donationDataFixture.raised);
   });
 
   it('calls getData on mount', () => {
     const getData = jest.fn();
-    const wrapper = shallowMountComponent({
+    const { vm } = shallowMountComponent({
       methods: {
         getData
       }
     });
-    expect(wrapper.vm.$el).toBeTruthy();
+    expect(vm.$el).toBeTruthy();
     expect(getData).toBeCalled();
   });
 
   test('calculates progress percentage', async () => {
-    const wrapper = shallowMountComponent();
-    expect(wrapper.vm.progress).toEqual('0%');
-    await wrapper.vm.getData();
-    expect(wrapper.vm.progress).toEqual('50%');
+    const { vm } = shallowMountComponent();
+    expect(vm.progress).toEqual('0%');
+    await vm.getData();
+    expect(vm.progress).toEqual('50%');
   });
 
   test('renders title', () => {
-    const wrapper = shallowMountComponent();
-    expect(wrapper.vm.$refs.title.textContent).toContain(defaultProps.title);
+    const { vm } = shallowMountComponent();
+    expect(vm.$refs.title.textContent).toContain(defaultProps.title);
   });
 
   test('renders charity', () => {
-    const wrapper = shallowMountComponent();
-    expect(wrapper.vm.$refs.charity.textContent).toContain(
+    const { vm } = shallowMountComponent();
+    expect(vm.$refs.charity.textContent).toContain(
       defaultProps.charity
-    );
-  });
-
-  test('renders target', async () => {
-    const wrapper = shallowMountComponent();
-    await wrapper.vm.getData();
-    expect(wrapper.vm.$refs.target.textContent).toContain(
-      donationDataFixture.target
-    );
-  });
-
-  test('renders raised', async () => {
-    const wrapper = shallowMountComponent();
-    await wrapper.vm.getData();
-    expect(wrapper.vm.$refs.raised.textContent).toContain(
-      donationDataFixture.raised
     );
   });
 });
