@@ -3,7 +3,7 @@
   background: #fafafa;
   margin: 30px;
   max-width: 410px;
-  box-shadow: 0 3px 2px -1px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 2px -1px rgba(0, 0, 0, 0.1);
 
   &__content {
     padding: 30px;
@@ -48,7 +48,11 @@
 
   &__raised,
   &__target {
-    flex-basis: 50%;
+    flex-basis: 100%;
+
+    @media only screen and (min-width: 600px) {
+      flex-basis: 50%;
+    }
 
     h4 {
       font-weight: 400;
