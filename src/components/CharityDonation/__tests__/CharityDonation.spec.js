@@ -1,10 +1,11 @@
 import { shallowMount } from '@vue/test-utils';
 import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
 import donationDataFixture from '../__fixtures__/donation-data.fixture';
 import CharityDonation from '../CharityDonation.vue';
 
-const MockAdapter = require('axios-mock-adapter');
 const mock = new MockAdapter(axios);
+
 const defaultProps = {
   title: 'test title',
   charity: 'test charity',
@@ -68,8 +69,6 @@ describe('CharityDonation', () => {
 
   test('renders charity', () => {
     const { vm } = shallowMountComponent();
-    expect(vm.$refs.charity.textContent).toContain(
-      defaultProps.charity
-    );
+    expect(vm.$refs.charity.textContent).toContain(defaultProps.charity);
   });
 });

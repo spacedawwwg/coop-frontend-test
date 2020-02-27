@@ -12,7 +12,7 @@
       <p class="coop-c-charity-donation__progress">
         <span
           class="coop-c-charity-donation__progress__bar"
-          :style="`width:${progress}`"
+          :style="{ width: progress }"
         >
           <span class="coop-u-visuallyhidden">
             Donation progress: {{ progress }}

@@ -1,7 +1,6 @@
 .coop-c-charity-donation {
   border: 1px solid #dcdcdc;
   background: #fafafa;
-  margin: 30px;
   max-width: 410px;
   box-shadow: 0 3px 2px -1px rgba(0, 0, 0, 0.1);
 
@@ -9,10 +8,6 @@
     padding: 30px;
     display: flex;
     flex-wrap: wrap;
-  }
-
-  &.is-loading &__content {
-    /* opacity: 0; */
   }
 
   &__header {
