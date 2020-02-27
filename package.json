@@ -9,6 +9,8 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@coopdigital/css-foundations": "^2.0.5",
+    "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "vue": "^2.6.11"
   },
@@ -18,9 +20,12 @@
     "@vue/cli-plugin-unit-jest": "^4.2.0",
     "@vue/cli-service": "^4.2.0",
     "@vue/test-utils": "1.0.0-beta.31",
+    "axios-mock-adapter": "^1.17.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.1.2",
+    "postcss-nested": "^4.2.1",
+    "postcss-preset-env": "^6.7.0",
     "vue-template-compiler": "^2.6.11"
   }
 }
