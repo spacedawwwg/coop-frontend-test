@@ -61,6 +61,7 @@
               @keydown="isNumber($event)"
               autocomplete="off"
               v-model="donation"
+              inputmode="numerical"
               ref="donation"
             />
           </div>
