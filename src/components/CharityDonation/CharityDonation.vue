@@ -54,7 +54,7 @@
             </span>
             <input
               class="coop-c-charity-donation__donate__input"
-              type="text"
+              type="number"
               name="donation"
               id="donation"
               pattern="[0-9]+"

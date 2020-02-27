@@ -94,6 +94,13 @@
     &__input {
       flex: 1;
       padding-left: 30px;
+      appearance: textfield;
+
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        appearance: none;
+        margin: 0;
+      }
     }
 
     &__btn {
