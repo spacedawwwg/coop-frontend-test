@@ -24,8 +24,7 @@
           Raised so far
         </h4>
         <p ref="raised">
-          &pound;
-          <ICountUp :endVal="raised" v-bind="countUp" />
+          &pound;<ICountUp :endVal="raised" v-bind="countUp" />
         </p>
       </div>
       <div class="coop-c-charity-donation__target">
@@ -33,8 +32,7 @@
           Target
         </h4>
         <p ref="target">
-          &pound;
-          <ICountUp :endVal="target" v-bind="countUp" />
+          &pound;<ICountUp :endVal="target" v-bind="countUp" />
         </p>
       </div>
       <form class="coop-c-charity-donation__donate">
