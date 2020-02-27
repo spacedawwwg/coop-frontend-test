@@ -34,10 +34,7 @@
         </h4>
         <p ref="target">
           &pound;
-          <ICountUp
-            :endVal="target"
-            v-bind="countUp"
-          />
+          <ICountUp :endVal="target" v-bind="countUp" />
         </p>
       </div>
       <form class="coop-c-charity-donation__donate">
@@ -57,12 +54,13 @@
               type="number"
               name="donation"
               id="donation"
-              pattern="[0-9]+"
-              @keydown="isNumber($event)"
+              min="0"
+              pattern="[0-9]*"
+              inputmode="numeric"
               autocomplete="off"
-              v-model="donation"
-              inputmode="numerical"
               ref="donation"
+              v-model="donation"
+              @keydown="isNumber($event)"
             />
           </div>
           <button
