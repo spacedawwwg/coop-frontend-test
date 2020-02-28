@@ -49,7 +49,7 @@
             </span>
             <input
               class="coop-c-charity-donation__donate__input"
-              type="number"
+              type="text"
               name="donation"
               id="donation"
               min="0"
