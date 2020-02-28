@@ -11,11 +11,18 @@
       CharityDonation
     },
     metaInfo: {
-      title: 'Co-op Frontend Test',
+      title: 'Co-op front-end test',
       htmlAttrs: {
         lang: 'en',
         amp: true
-      }
+      },
+      meta: [
+        {
+          key: 'description',
+          name: 'description',
+          content: 'A charity donation component built with Vue.js'
+        }
+      ]
     },
     data() {
       return {
