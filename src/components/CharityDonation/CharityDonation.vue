@@ -80,4 +80,4 @@
 
 <script src="./CharityDonation.js"></script>
 
-<style src="./CharityDonation.css" scoped></style>
+<style src="./CharityDonation.css"></style>
