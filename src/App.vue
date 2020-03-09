@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
   .app {
     padding: 15px;
 

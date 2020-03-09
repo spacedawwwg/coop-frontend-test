@@ -6,7 +6,7 @@
   import CharityDonation from '../components/CharityDonation';
 
   export default {
-    name: 'App',
+    name: 'Home',
     components: {
       CharityDonation
     },

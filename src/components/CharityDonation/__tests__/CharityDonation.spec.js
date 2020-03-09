@@ -35,7 +35,7 @@ describe('CharityDonation', () => {
       .reply(200, donationDataFixture);
   });
 
-  test('gets donation data', async () => {
+  it('gets donation data', async () => {
     const { vm } = shallowMountComponent();
     expect(vm.target).toEqual(0);
     expect(vm.raised).toEqual(0);
@@ -55,19 +55,19 @@ describe('CharityDonation', () => {
     expect(getData).toBeCalled();
   });
 
-  test('calculates progress percentage', async () => {
+  it('calculates progress percentage', async () => {
     const { vm } = shallowMountComponent();
     expect(vm.progress).toEqual('0%');
     await vm.getData();
     expect(vm.progress).toEqual('50%');
   });
 
-  test('renders title', () => {
+  it('renders title', () => {
     const { vm } = shallowMountComponent();
     expect(vm.$refs.title.textContent).toContain(defaultProps.title);
   });
 
-  test('renders charity', () => {
+  it('renders charity', () => {
     const { vm } = shallowMountComponent();
     expect(vm.$refs.charity.textContent).toContain(defaultProps.charity);
   });
